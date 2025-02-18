@@ -1,0 +1,67 @@
+<%
+var depth1 = locals.depth1 ? locals.depth1 : 0;
+var depth2 = locals.depth2 ? locals.depth2 : 0;
+var url = locals.url ? locals.url : '../../';
+var depth1P = [];
+var depth2P = [];
+for(var i=1; i<=5; i++){
+    depth2P[i] = [];
+    if(depth1==i){
+        depth1P[i] = ' active';
+        for(var j=1; j<=2; j++){
+            if(depth2==j){
+                depth2P[i][j] = ' active';
+            }else{
+                depth2P[i][j] = '';
+            }
+        }
+    }else{ 
+        depth1P[i] = "";
+        for(var j=1 ;j<=5; j++){
+            depth2P[i][j] = '';
+        }
+    }
+}
+%>
+
+<div class="cptNav">
+    <div class="inner">
+        <ul>
+            <li class="depth01<%= depth1P[1] %>">
+                <a href="../home/menuList.html">홈페이지관리</a>
+                <div class="depth02Cov">
+                    <ul>
+                        <li class="depth02<%= depth2P[1][1] %>">
+                            <a href="../home/menuList.html">메뉴관리</a>
+                        </li>
+                        <li class="depth02<%= depth2P[1][2] %>">
+                            <a href="../home/visualList.html">메인 이미지 관리</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="depth01<%= depth1P[2] %>">
+                <a href="javascript:void(0)">서비스관리</a>
+            </li>
+            <li class="depth01<%= depth1P[3] %>">
+                <a href="javascript:void(0)">게시판관리</a>
+            </li>
+            <li class="depth01<%= depth1P[4] %>">
+                <a href="javascript:void(0)">상담신청관리</a>
+            </li>
+            <li class="depth01<%= depth1P[5] %>">
+                <a href="javascript:void(0)">시스템관리</a>
+                <div class="depth02Cov">
+                    <ul>
+                        <li class="depth02<%= depth2P[5][1] %>">
+                            <a href="javascript:void(0)">메뉴관리</a>
+                        </li>
+                        <li class="depth02<%= depth2P[5][2] %>">
+                            <a href="javascript:void(0)">메인 이미지 관리</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,365 @@
+/*contents layout common style*/
+.contCov {
+    border-top:1px solid var(--lbg2); padding-top:20px; margin-top:20px;
+    > div {
+        &:not(:last-of-type) {
+            margin-bottom:40px;
+        }
+    }
+}
+
+.cptForm {
+    /*로그인 전용*/
+    .loginType {
+        > div {
+            position:relative; border:1px solid var(--lbg1); padding: 10px 20px 0 20px;
+
+            > label {
+                font-size:14px; font-weight:500; color:var(--tbg1);
+
+                & + input {
+                    width:100%; height:50px; line-height:50px; border:0; font-size:16px; color:var(--t1);
+
+                    &:focus {
+                        outline:0;
+                    }
+                }
+            }
+        }
+    }
+
+    .loginChk {
+        display:flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; position:relative; margin:20px 0;
+
+        > input[type='checkbox'] {
+            appearance:none; position:absolute; top:2px; left:0; width:20px; height:20px; opacity:1;
+
+            & + label {
+                display:inline-block; padding-left:27px; font-size:16px; color:var(--prm3); font-weight:400; cursor:pointer;
+                &::before {
+                    content:''; position:absolute; top:50%; left:0; width:20px; height:20px; transform:translateY(-50%); background:url(../../common/images/common/ico_chk_off.svg)50% 50% no-repeat;
+                }
+            }
+
+            &:checked {
+                & + label {
+                    &::before {
+                        background:url(../../common/images/common/ico_chk_on.svg)50% 50% no-repeat;
+                        
+                    }
+                }
+            }
+
+            &:disabled {
+                & + label {
+                    &::before {
+                        background:url(../../common/images/common/ico_chk_disabled.svg)50% 50% no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+    .loginBtn {
+        width:100%; position:relative;
+
+        > button {
+            width:100%; background:var(--t1); border-radius:8px; text-align:center; font-size:16px; color:var(--bg3); font-weight:bold; height:50px; line-height:50px; transition:all 0.4s;
+
+            &:hover {
+                background:rgba(0,0,0,0.7);
+            }
+
+            &:disabled {
+                background:var(--lbg2);
+            }
+        }
+    }
+
+    /*공통 폼*/
+    .frmGroup {
+        display:flex; flex-flow :row nowrap; align-items: center;
+
+        &.alignL {
+            justify-content: flex-start;
+        }
+
+        &.alignC {
+            justify-content: center;
+        }
+
+        &.alignR {
+            justify-content: flex-end;
+        }
+
+        &.gap {
+            gap:8px;
+        }
+    }
+
+    /*select*/
+    .slt {
+        position:relative;
+        
+        select {
+            position:relative; appearance:none; width:100%; border:1px solid var(--lbg1); border-radius:8px; height:40px; line-height:40px; padding: 0 20px; font-size:16px; color:var(--t1); font-weight:500;
+
+            &:focus {
+                border:2px solid var(--prm2);
+            }
+        }
+
+        &::after {
+            content:''; position:absolute; top:50%; right:20px; width:16px; height:16px; transform:translateY(-50%); background:url(../../common/images/common/ico_dropdown.svg)0 0 no-repeat;
+        }
+        
+    }
+
+    /*input[type=text]*/
+    .ipt {
+        position:relative;
+
+        input {
+            width:100%; border:1px solid var(--lbg1); border-radius:8px; height:40px; line-height:40px; font-size:16px; font-weight:500; color:var(--t1); padding:0 20px;
+            
+            &:focus {
+                border:2px solid var(--prm2);
+            }
+        }
+
+        &.srch {
+            input {
+                border-radius:8px 0 0 8px;
+            }
+        }
+    }
+
+    /*input[type=file]*/
+    .file {
+        position:relative;
+
+        input {
+            position:absolute; top:0; left:0; width:1px; height:1px;
+        }
+
+        label {
+            display:inline-block; border:1px solid var(--lbg2); font-size:14px; font-weight:500; text-align:center; padding:0 20px; line-height:40px; height:40px; border-radius:8px; cursor:pointer; transition:all 0.4s;
+            
+            &:hover {
+                background:var(--bg2);
+            }
+        }
+
+        .after {
+            display:none; flex-flow: row nowrap; align-items: center; justify-content: flex-start;
+
+            > a {
+                &.fileNm {
+                    font-size:16px; color:var(--t1); text-decoration:underline; font-weight:500; margin-right:8px; line-height:40px;
+                }
+            }
+
+            .delBtn {
+                display:inline-block; width:18px; height:18px; background:#d5dae4 url(../../common/images/common/btn_del.svg)50% 50% no-repeat; border-radius:50%;
+            }
+        }
+
+        &.on {
+            .before {
+                display:none;
+            }
+            .after {
+                display:flex;
+            }
+        }
+    }
+
+}
+
+/*button*/
+.comButton {
+    position:relative; flex:none;
+
+    button {
+        &.btn {
+            appearance:none; padding: 0 40px; line-height:40px; height:40px; text-align:center; font-size:14px; font-weight:500; text-align:center;  transition:all 0.4s;
+        }
+
+        &.srch {
+            padding:0 20px; border-radius:0 8px 8px 0; background:var(--lbg2); border:1px solid var(--lbg1); border-left:0;
+        }
+
+        /*목록*/
+        &.sel {
+            background:var(--bg4); color:var(--bg3); border-radius:8px;
+        }
+
+        /*등록*/
+        &.ins {
+            background:var(--prm1); color:var(--bg3); border-radius:8px;
+        }
+
+        /*수정*/
+        &.upd {
+            background:var(--prm1); color:var(--bg3); border-radius:8px;
+        }
+
+        /*삭제*/
+        &.del {
+            background:var(--snd3); color:var(--bg3); border-radius:8px;
+        }
+
+        /*취소*/
+        &.cncl {
+            background:var(--bg4); color:var(--bg3); border-radius:8px;
+        }
+
+        /*완료*/
+        &.comp {
+            background:var(--prm2); color:var(--bg3); border-radius:8px;
+        }
+
+        &.mini {
+            padding: 0 10px;
+        }
+
+        &:hover {
+            opacity:0.8;
+        }
+
+        &:disabled {
+            background:var(--lbg2);
+        }
+    }
+
+    .btnGroup {
+        display:flex; flex-flow: row nowrap; align-items: center; gap:8px;
+
+        &.alignL {
+            justify-content: flex-start;
+        }
+
+        &.alignC {
+            justify-content: center;
+        }
+
+        &.alignR {
+            justify-content: flex-end;
+        }
+
+        &.alignSpread {
+            justify-content: space-between;
+        }
+    }
+}
+
+/*paging*/
+.cptPaging {
+    width:100%; position:relative; display:flex; flex-flow:row nowrap; align-items: center; justify-content: center; margin-top:60px; gap:20px;
+
+    > div {
+        ul {
+            display:flex; flex-flow: row nowrap; align-items: center; justify-content: center; gap:10px;
+
+            > li {
+                > a {
+                    display:inline-block; font-size:14px; font-weight:400; line-height:30px; height:30px; text-align:center; width:30px;
+                }
+
+                &.active {
+                    > a {
+                        border:1px solid var(--prm3); background:var(--prm3); color:var(--bg3); border-radius:50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*table*/ 
+.cptTable {
+    position:relative; width:100%;
+
+    > .tbTitle {
+        font-size:20px; color:var(--t1); font-weight:bold; margin-bottom:10px;
+    }
+
+    > .tbData {
+        border-collapse:collapse; width:100%; border-top:2px solid var(--prm2);
+
+        > thead {
+            > tr {
+                > th {
+                    font-size:16px; color:var(--bg3); font-weight:600; padding:20px 10px; text-align:center; line-height:22px; background:var(--prm3); border-right:1px solid var(--bg5);  word-break:break-all;
+                }
+            }
+        }
+
+        > tbody {
+            > tr {
+                > td {
+                    font-size:16px; color:var(--t1); font-weight:400; padding:20px; text-align:center; line-height:22px; background:var(--bg3); border-right:1px solid var(--lbg1); border-bottom:1px solid var(--lbg1); word-break:break-all;
+
+                    > a {
+                        text-decoration:underline;
+                    }
+
+                    &.txtBlue {
+                        color:var(--prm2);
+                    }
+
+                    &.txtRed {
+                        color:var(--snd3);
+                    }
+                }
+            }
+        }
+    }
+
+    > .tbView {
+        border-collapse:collapse; width:100%; border-top:2px solid var(--prm2);
+
+        > tbody {
+            > tr {
+                > th {
+                    font-size:16px; color:var(--t1); font-weight:600; padding:20px 10px; text-align:center; line-height:22px; background:var(--bg1); border-right:1px solid var(--lbg1); border-bottom:1px solid var(--lbg1);
+
+                    > span.required {
+                        font-size:14px; color:var(--snd2); font-weight:500;
+                    }
+                }
+                > td {
+                    font-size:16px; color:var(--t1); font-weight:400; padding:20px; text-align:left; line-height:22px; background:var(--bg3); border-right:1px solid var(--lbg1); border-bottom:1px solid var(--lbg1); order:1;
+
+                    .cptForm {
+                        .slt {
+                            width:250px; 
+                        }
+
+                        .ipt {
+                            width:550px; 
+                        }
+                        
+                        &.except {
+                            width:100%;
+                        }
+                    }
+
+                    &.txtBlue {
+                        color:var(--prm2);
+                    }
+
+                    &.txtRed {
+                        color:var(--snd3);
+                    }
+                }
+            }
+        }
+
+        &.insUpd {
+            td {
+                padding: 10px;
+            }
+        }
+    }
+}

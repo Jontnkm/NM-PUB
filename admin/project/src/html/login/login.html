@@ -1,1 +1,80 @@
-test
+<!-- Header -->
+<%- include('../ejs/top.ejs', {
+    title: "세무법인 낭만 CMS 관리시스템",
+    url: "../../"
+}) %>
+<style>
+    body {
+        overflow:hidden;
+    }
+</style>
+<!-- 레이아웃 START -->
+<div class="lytLayout">
+    <div class="layoutArea">
+        <!--상단영역 필요없음-->
+
+        <!--중단 영역-->
+        <div class="layoutContainer">
+            <div class="layoutSubCont">
+                <div class="subContArea login">
+                    <!--컨텐츠영역-->
+                    <div class="layoutCont">
+                        <!--컨텐츠 START-->
+                        <div class="loginPage">
+                            <div class="bg">
+                                <div class="obj"></div>
+                                <div class="obj"></div>
+                            </div>
+                            <div class="loginBox">
+                                <p class="title">로그인</p>
+                                <p class="desc">
+                                    Quick and Simple way to Automate your Payment
+                                </p>
+                                <div class="cptForm">
+                                    <div class="loginType">
+                                        <div class="idBox">
+                                            <label for="loginId">ID</label>
+                                            <input type="text" id="loginId">
+                                        </div>
+                                        <div class="pwBox">
+                                            <label for="loginPw">PASSWORD</label>
+                                            <input type="password" id="loginPw">
+                                        </div>
+                                    </div>
+                                    <div class="loginChk">
+                                        <input type="checkbox" id="loginChk">
+                                        <label for="loginChk">내 계정 저장하기</label>
+                                    </div>
+                                    <div class="loginBtn">
+                                        <button type="button">로그인</button>
+                                        <!--2025.02.17 disabled 케이스 -->
+                                        <!-- <button type="button" disabled>로그인</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--컨텐츠 END-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //중단 영역-->
+
+        <!-- 하단영역 -->
+        <div class="layoutFooter">
+            <!-- Footer -->
+            <%- include('../ejs/footer.ejs', {
+                url: "../../"
+            }) %>
+        </div>
+        <!-- //하단영역 -->
+    </div>
+</div>
+<!-- //레이아웃 END -->
+
+<!-- 팝업이 들어오는 영역 -->
+<!-- //팝업이 들어오는 영역 -->
+
+<!-- Bottom -->
+<%- include('../ejs/bottom.ejs', { }) %>

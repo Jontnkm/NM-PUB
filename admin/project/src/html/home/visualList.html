@@ -1,0 +1,134 @@
+<!-- Header -->
+<%- include('../ejs/top.ejs', {
+    title: "세무법인 낭만 CMS 관리시스템",
+    url: "../../"
+}) %>
+
+<!-- 레이아웃 START -->
+<div class="lytLayout">
+    <div class="layoutArea">
+        <!-- 상단영역 -->
+        <div class="layoutTop">
+            <!-- Top -->
+            <%- include('../ejs/header.ejs', {
+                url: "../../",
+            }) %>
+        </div>
+        <!-- //상단영역 -->
+        <!--중단 영역-->
+        <div class="layoutContainer">
+            <div class="layoutSubCont">
+                <div class="subContArea">
+                    
+                    <!-- 좌측 메뉴 영역 -->
+                    <div class="layoutNav">
+                        <!-- Left Menu -->
+                        <%- include('../ejs/nav.ejs', {
+                            depth1:1,
+                            depth2:2,
+                            url: "../../",
+                        }) %>
+                    </div>
+
+                    <!--컨텐츠영역-->
+                    <div class="layoutCont">
+
+                        <%- include('../ejs/subTitle.ejs', {
+                            url: "../../",
+                        }) %>
+                        
+                        <%- include('../ejs/subTop.ejs', {
+                            url: "../../",
+                        }) %>
+
+                        <!--컨텐츠 START-->
+                        <div class="contCov">
+                            <div class="cptTable">
+                                <table class="tbData">
+                                    <colgroup>
+                                        <col style="width:70px;">
+                                        <col style="width:auto;">
+                                        <col style="width:200px;">
+                                        <col style="width:200px;">
+                                        <col style="width:200px;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>이미지 경로</th>
+                                            <th>노출순서</th>
+                                            <th>사용여부</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>
+                                                <a href="javascript:void(0)">-</a>
+                                            </td>
+                                            <td>/upload/12341234</td>
+                                            <td>1</td>
+                                            <td class="txtBlue">사용</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>
+                                                <a href="javascript:void(0)">메인이미지 2번</a>
+                                            </td>
+                                            <td>/upload/12341234</td>
+                                            <td>2</td>
+                                            <td class="txtRed">미사용</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <a href="javascript:void(0)">메인이미지 건물외관</a>
+                                            </td>
+                                            <td>/upload/12341234</td>
+                                            <td>3</td>
+                                            <td class="txtBlue">사용</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="cptPaging">
+                                <a href="javascript:void(0)" class="prevPage"><img src="../../common/images/common/ico_pagArrLeft.svg" alt="왼쪽 방향 아이콘"></a>
+                                <div>
+                                    <ul>
+                                        <li class="active"><a href="javascript:void(0)">1</a></li>
+                                        <li><a href="javascript:void(0)">2</a></li>
+                                        <li><a href="javascript:void(0)">3</a></li>
+                                        <li><a href="javascript:void(0)">4</a></li>
+                                        <li><a href="javascript:void(0)">5</a></li>
+                                    </ul>
+                                </div>
+                                <a href="javascript:void(0)" class="nextPage"><img src="../../common/images/common/ico_pagArrRight.svg" alt="오른쪽 방향 아이콘"></a>
+                            </div>
+                        </div>
+                        <!--컨텐츠 END-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //중단 영역-->
+
+        <!-- 하단영역 -->
+        <div class="layoutFooter">
+            <!-- Footer -->
+            <%- include('../ejs/footer.ejs', {
+                url: "../../"
+            }) %>
+        </div>
+        <!-- //하단영역 -->
+    </div>
+</div>
+<!-- //레이아웃 END -->
+
+<!-- 팝업이 들어오는 영역 -->
+<!-- //팝업이 들어오는 영역 -->
+
+<!-- Bottom -->
+<%- include('../ejs/bottom.ejs', { }) %>

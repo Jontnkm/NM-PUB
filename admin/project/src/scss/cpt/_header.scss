@@ -1,0 +1,36 @@
+.cptHeader {
+    position:relative; width:100%; padding: 40px; border-bottom:1px solid var(--lbg2);
+
+    .inner {
+        display:flex; flex-flow: row nowrap; align-items: center; justify-content: space-between;
+
+        > .logoArea {
+            
+            > a {
+                display:block; border:1px solid red; font-size:20px; font-weight:Bold; color:var(--t1);
+            }
+        }
+
+        > .accOptArea {
+            > ul {
+                display:flex; flex-flow :row nowrap; align-items: center; justify-content: flex-start;
+
+                > li {
+                    position:relative;
+
+                    &:first-of-type {
+                        font-size:14px; font-weight:500; line-height:1; color:var(--t1); letter-spacing:-0.23px; margin-right:20px;
+
+                        > span {
+                            font-weight:bold; font-size:16px;
+                        }
+                    }
+
+                    > a {
+                        display:inline-block; font-size:14px; font-weight:500; line-height:1; color:var(--t1); letter-spacing:-0.23px; border:1px solid var(--t1); border-radius:8px; line-height:35px; height:35px; padding: 0 20px;
+                    }
+                }
+            }
+        }
+    }
+}

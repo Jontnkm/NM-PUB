@@ -1,0 +1,955 @@
+@charset "UTF-8";
+/* 본고딕 Thin */
+@font-face {
+	font-family: "Pretendard GOV";
+	font-style: normal;
+	font-weight: 200;
+	src: url("../../common/webfont/PretendardGOV-Thin.woff") format("font-woff"), url("../../common/webfont/PretendardGOV-Thin.woff2") format("font-woff2"), url("../../common/webfont/PretendardGOV-Thin.otf") format("opentype");
+}
+/* 본고딕 Light */
+@font-face {
+	font-family: "Pretendard GOV";
+	font-style: normal;
+	font-weight: 300;
+	src: url("../../common/webfont/PretendardGOV-Light.woff") format("font-woff"), url("../../common/webfont/PretendardGOV-Light.woff2") format("font-woff2"), url("../../common/webfont/PretendardGOV-Light.otf") format("opentype");
+}
+/* 본고딕 Regular */
+@font-face {
+	font-family: "Pretendard GOV";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../../common/webfont/PretendardGOV-Regular.woff") format("font-woff"), url("../../common/webfont/PretendardGOV-Regular.woff2") format("font-woff2"), url("../../common/webfont/PretendardGOV-Regular.otf") format("opentype");
+}
+/* 본고딕 Medium */
+@font-face {
+	font-family: "Pretendard GOV";
+	font-style: normal;
+	font-weight: 500;
+	src: url("../../common/webfont/PretendardGOV-Medium.woff") format("font-woff"), url("../../common/webfont/PretendardGOV-Medium.woff2") format("font-woff2"), url("../../common/webfont/PretendardGOV-Medium.otf") format("opentype");
+}
+/* 본고딕 Bold */
+@font-face {
+	font-family: "Pretendard GOV";
+	font-style: normal;
+	font-weight: 600;
+	src: url("../../common/webfont/PretendardGOV-SemiBold.woff") format("font-woff"), url("../../common/webfont/PretendardGOV-SemiBold.woff2") format("font-woff2"), url("../../common/webfont/PretendardGOV-SemiBold.otf") format("opentype");
+}
+/* 본고딕 Bold */
+@font-face {
+	font-family: "Pretendard GOV";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../../common/webfont/PretendardGOV-Bold.woff") format("font-woff"), url("../../common/webfont/PretendardGOV-Bold.woff2") format("font-woff2"), url("../../common/webfont/PretendardGOV-Bold.otf") format("opentype");
+}
+/* 본고딕 Bold */
+@font-face {
+	font-family: "Pretendard GOV";
+	font-style: normal;
+	font-weight: 900;
+	src: url("../../common/webfont/PretendardGOV-ExtraBold.woff") format("font-woff"), url("../../common/webfont/PretendardGOV-ExtraBold.woff2") format("font-woff2"), url("../../common/webfont/PretendardGOV-ExtraBold.otf") format("opentype");
+}
+* {
+	box-sizing: border-box;
+	font-family: "Pretendard GOV";
+	letter-spacing: -0.4px;
+	line-height: 1.4;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset, img {
+	border: 0 none;
+	display: block;
+}
+
+dl, ul, ol, menu, li {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+	content: none;
+}
+
+input, select, textarea, button {
+	vertical-align: middle;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+label:focus {
+	outline: 0;
+	border: 0;
+}
+
+input, textarea {
+	-webkit-border-radius: 0;
+	-webkit-appearance: none;
+}
+
+button {
+	border: 0 none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+body {
+	background: #fff;
+}
+
+body, th, td, input, select, textarea, button {
+	font-size: 10px;
+	line-height: 1.5;
+	font-family: "Pretendard GOV";
+	color: #000;
+} /* color값은 디자인가이드에 맞게사용 */
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a:active, a:hover {
+	text-decoration: none;
+}
+
+address, caption, cite, code, dfn, em, var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+caption {
+	font-size: 0;
+}
+
+input[type=radio] {
+	width: 1px;
+	height: 1px;
+	font-size: 0;
+	opacity: 0.01;
+	overflow: hidden;
+}
+
+input[type=checkbox] {
+	width: 1px;
+	height: 1px;
+	font-size: 0;
+	opacity: 0.01;
+	overflow: hidden;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	background: #fff url(../../common/images/icon_select.png) calc(100% - 9px) center no-repeat;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+label {
+	font-size: 0;
+}
+
+.skip .quickBtn {
+	display: block;
+	width: 100%;
+	height: 0px;
+	background: #092473;
+	font-size: 15px;
+	color: #fff;
+	overflow: hidden;
+	text-align: center;
+}
+
+.skip .quickBtn:focus {
+	height: auto;
+}
+
+.hidden {
+	font-size: 0 !important;
+	position: fixed;
+	left: -5000px;
+	top: 0;
+}
+
+:root {
+	--prm1: #21409A;
+	--prm2: #2C99F2;
+	--prm3: #252F3E;
+	--snd1: #FFAC11;
+	--snd2: #D67D00;
+	--snd3: #8e0000;
+	--t1: #000000;
+	--tbg1: #6E7584;
+	--tbg2: #848B9A;
+	--tbg3: #B9BDC6;
+	--l1: #EEEEEE;
+	--l2: #DDDDDD;
+	--lbg1: #DEE2EA;
+	--lbg2: #BFC5CF;
+	--bg1: #F5F6F8;
+	--bg2: #EFF1F5;
+	--bg3: #FFFFFF;
+	--bg4: #1f2835;
+	--bg5: #636d7b;
+	--bg6: #d7d9dc;
+	--bg7: #f5f9ff;
+}
+
+/*contents layout common style*/
+.contCov {
+	border-top: 1px solid var(--lbg2);
+	padding-top: 20px;
+	margin-top: 20px;
+}
+.contCov > div:not(:last-of-type) {
+	margin-bottom: 40px;
+}
+
+.cptForm {
+	/*로그인 전용*/
+	/*공통 폼*/
+	/*select*/
+	/*input[type=text]*/
+	/*input[type=file]*/
+}
+.cptForm .loginType > div {
+	position: relative;
+	border: 1px solid var(--lbg1);
+	padding: 10px 20px 0 20px;
+}
+.cptForm .loginType > div > label {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--tbg1);
+}
+.cptForm .loginType > div > label + input {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	border: 0;
+	font-size: 16px;
+	color: var(--t1);
+}
+.cptForm .loginType > div > label + input:focus {
+	outline: 0;
+}
+.cptForm .loginChk {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+	margin: 20px 0;
+}
+.cptForm .loginChk > input[type=checkbox] {
+	appearance: none;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	opacity: 1;
+}
+.cptForm .loginChk > input[type=checkbox] + label {
+	display: inline-block;
+	padding-left: 27px;
+	font-size: 16px;
+	color: var(--prm3);
+	font-weight: 400;
+	cursor: pointer;
+}
+.cptForm .loginChk > input[type=checkbox] + label::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	transform: translateY(-50%);
+	background: url(../../common/images/common/ico_chk_off.svg) 50% 50% no-repeat;
+}
+.cptForm .loginChk > input[type=checkbox]:checked + label::before {
+	background: url(../../common/images/common/ico_chk_on.svg) 50% 50% no-repeat;
+}
+.cptForm .loginChk > input[type=checkbox]:disabled + label::before {
+	background: url(../../common/images/common/ico_chk_disabled.svg) 50% 50% no-repeat;
+}
+.cptForm .loginBtn {
+	width: 100%;
+	position: relative;
+}
+.cptForm .loginBtn > button {
+	width: 100%;
+	background: var(--t1);
+	border-radius: 8px;
+	text-align: center;
+	font-size: 16px;
+	color: var(--bg3);
+	font-weight: bold;
+	height: 50px;
+	line-height: 50px;
+	transition: all 0.4s;
+}
+.cptForm .loginBtn > button:hover {
+	background: rgba(0, 0, 0, 0.7);
+}
+.cptForm .loginBtn > button:disabled {
+	background: var(--lbg2);
+}
+.cptForm .frmGroup {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+.cptForm .frmGroup.alignL {
+	justify-content: flex-start;
+}
+.cptForm .frmGroup.alignC {
+	justify-content: center;
+}
+.cptForm .frmGroup.alignR {
+	justify-content: flex-end;
+}
+.cptForm .frmGroup.gap {
+	gap: 8px;
+}
+.cptForm .slt {
+	position: relative;
+}
+.cptForm .slt select {
+	position: relative;
+	appearance: none;
+	width: 100%;
+	border: 1px solid var(--lbg1);
+	border-radius: 8px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+	font-size: 16px;
+	color: var(--t1);
+	font-weight: 500;
+}
+.cptForm .slt select:focus {
+	border: 2px solid var(--prm2);
+}
+.cptForm .slt::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	width: 16px;
+	height: 16px;
+	transform: translateY(-50%);
+	background: url(../../common/images/common/ico_dropdown.svg) 0 0 no-repeat;
+}
+.cptForm .ipt {
+	position: relative;
+}
+.cptForm .ipt input {
+	width: 100%;
+	border: 1px solid var(--lbg1);
+	border-radius: 8px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--t1);
+	padding: 0 20px;
+}
+.cptForm .ipt input:focus {
+	border: 2px solid var(--prm2);
+}
+.cptForm .ipt.srch input {
+	border-radius: 8px 0 0 8px;
+}
+.cptForm .file {
+	position: relative;
+}
+.cptForm .file input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+}
+.cptForm .file label {
+	display: inline-block;
+	border: 1px solid var(--lbg2);
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	padding: 0 20px;
+	line-height: 40px;
+	height: 40px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+.cptForm .file label:hover {
+	background: var(--bg2);
+}
+.cptForm .file .after {
+	display: none;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+.cptForm .file .after > a.fileNm {
+	font-size: 16px;
+	color: var(--t1);
+	text-decoration: underline;
+	font-weight: 500;
+	margin-right: 8px;
+	line-height: 40px;
+}
+.cptForm .file .after .delBtn {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: #d5dae4 url(../../common/images/common/btn_del.svg) 50% 50% no-repeat;
+	border-radius: 50%;
+}
+.cptForm .file.on .before {
+	display: none;
+}
+.cptForm .file.on .after {
+	display: flex;
+}
+
+/*button*/
+.comButton {
+	position: relative;
+	flex: none;
+}
+.comButton button {
+	/*목록*/
+	/*등록*/
+	/*수정*/
+	/*삭제*/
+	/*취소*/
+	/*완료*/
+}
+.comButton button.btn {
+	appearance: none;
+	padding: 0 40px;
+	line-height: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	transition: all 0.4s;
+}
+.comButton button.srch {
+	padding: 0 20px;
+	border-radius: 0 8px 8px 0;
+	background: var(--lbg2);
+	border: 1px solid var(--lbg1);
+	border-left: 0;
+}
+.comButton button.sel {
+	background: var(--bg4);
+	color: var(--bg3);
+	border-radius: 8px;
+}
+.comButton button.ins {
+	background: var(--prm1);
+	color: var(--bg3);
+	border-radius: 8px;
+}
+.comButton button.upd {
+	background: var(--prm1);
+	color: var(--bg3);
+	border-radius: 8px;
+}
+.comButton button.del {
+	background: var(--snd3);
+	color: var(--bg3);
+	border-radius: 8px;
+}
+.comButton button.cncl {
+	background: var(--bg4);
+	color: var(--bg3);
+	border-radius: 8px;
+}
+.comButton button.comp {
+	background: var(--prm2);
+	color: var(--bg3);
+	border-radius: 8px;
+}
+.comButton button.mini {
+	padding: 0 10px;
+}
+.comButton button:hover {
+	opacity: 0.8;
+}
+.comButton button:disabled {
+	background: var(--lbg2);
+}
+.comButton .btnGroup {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	gap: 8px;
+}
+.comButton .btnGroup.alignL {
+	justify-content: flex-start;
+}
+.comButton .btnGroup.alignC {
+	justify-content: center;
+}
+.comButton .btnGroup.alignR {
+	justify-content: flex-end;
+}
+.comButton .btnGroup.alignSpread {
+	justify-content: space-between;
+}
+
+/*paging*/
+.cptPaging {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	margin-top: 60px;
+	gap: 20px;
+}
+.cptPaging > div ul {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.cptPaging > div ul > li > a {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 30px;
+	height: 30px;
+	text-align: center;
+	width: 30px;
+}
+.cptPaging > div ul > li.active > a {
+	border: 1px solid var(--prm3);
+	background: var(--prm3);
+	color: var(--bg3);
+	border-radius: 50%;
+}
+
+/*table*/
+.cptTable {
+	position: relative;
+	width: 100%;
+}
+.cptTable > .tbTitle {
+	font-size: 20px;
+	color: var(--t1);
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.cptTable > .tbData {
+	border-collapse: collapse;
+	width: 100%;
+	border-top: 2px solid var(--prm2);
+}
+.cptTable > .tbData > thead > tr > th {
+	font-size: 16px;
+	color: var(--bg3);
+	font-weight: 600;
+	padding: 20px 10px;
+	text-align: center;
+	line-height: 22px;
+	background: var(--prm3);
+	border-right: 1px solid var(--bg5);
+	word-break: break-all;
+}
+.cptTable > .tbData > tbody > tr > td {
+	font-size: 16px;
+	color: var(--t1);
+	font-weight: 400;
+	padding: 20px;
+	text-align: center;
+	line-height: 22px;
+	background: var(--bg3);
+	border-right: 1px solid var(--lbg1);
+	border-bottom: 1px solid var(--lbg1);
+	word-break: break-all;
+}
+.cptTable > .tbData > tbody > tr > td > a {
+	text-decoration: underline;
+}
+.cptTable > .tbData > tbody > tr > td.txtBlue {
+	color: var(--prm2);
+}
+.cptTable > .tbData > tbody > tr > td.txtRed {
+	color: var(--snd3);
+}
+.cptTable > .tbView {
+	border-collapse: collapse;
+	width: 100%;
+	border-top: 2px solid var(--prm2);
+}
+.cptTable > .tbView > tbody > tr > th {
+	font-size: 16px;
+	color: var(--t1);
+	font-weight: 600;
+	padding: 20px 10px;
+	text-align: center;
+	line-height: 22px;
+	background: var(--bg1);
+	border-right: 1px solid var(--lbg1);
+	border-bottom: 1px solid var(--lbg1);
+}
+.cptTable > .tbView > tbody > tr > th > span.required {
+	font-size: 14px;
+	color: var(--snd2);
+	font-weight: 500;
+}
+.cptTable > .tbView > tbody > tr > td {
+	font-size: 16px;
+	color: var(--t1);
+	font-weight: 400;
+	padding: 20px;
+	text-align: left;
+	line-height: 22px;
+	background: var(--bg3);
+	border-right: 1px solid var(--lbg1);
+	border-bottom: 1px solid var(--lbg1);
+	order: 1;
+}
+.cptTable > .tbView > tbody > tr > td .cptForm .slt {
+	width: 250px;
+}
+.cptTable > .tbView > tbody > tr > td .cptForm .ipt {
+	width: 550px;
+}
+.cptTable > .tbView > tbody > tr > td .cptForm.except {
+	width: 100%;
+}
+.cptTable > .tbView > tbody > tr > td.txtBlue {
+	color: var(--prm2);
+}
+.cptTable > .tbView > tbody > tr > td.txtRed {
+	color: var(--snd3);
+}
+.cptTable > .tbView.insUpd td {
+	padding: 10px;
+}
+
+.wrap {
+	width: 100%;
+	height: 100%;
+}
+.wrap .lytLayout {
+	height: 100%;
+}
+.wrap .layoutArea {
+	height: 100%;
+}
+.wrap .layoutContainer {
+	height: calc(100% - 116px);
+}
+.wrap .layoutSubCont {
+	height: 100%;
+}
+.wrap .subContArea {
+	height: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+.wrap .subContArea.login {
+	display: block;
+}
+.wrap .subContArea.login .layoutCont {
+	width: 100%;
+	padding: 0 !important;
+}
+.wrap .layoutCont {
+	width: calc(100% - 240px);
+	height: 100%;
+	max-height: 100%;
+	padding: 40px;
+	overflow-y: auto;
+}
+
+.cptHeader {
+	position: relative;
+	width: 100%;
+	padding: 40px;
+	border-bottom: 1px solid var(--lbg2);
+}
+.cptHeader .inner {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.cptHeader .inner > .logoArea > a {
+	display: block;
+	border: 1px solid red;
+	font-size: 20px;
+	font-weight: Bold;
+	color: var(--t1);
+}
+.cptHeader .inner > .accOptArea > ul {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+.cptHeader .inner > .accOptArea > ul > li {
+	position: relative;
+}
+.cptHeader .inner > .accOptArea > ul > li:first-of-type {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1;
+	color: var(--t1);
+	letter-spacing: -0.23px;
+	margin-right: 20px;
+}
+.cptHeader .inner > .accOptArea > ul > li:first-of-type > span {
+	font-weight: bold;
+	font-size: 16px;
+}
+.cptHeader .inner > .accOptArea > ul > li > a {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1;
+	color: var(--t1);
+	letter-spacing: -0.23px;
+	border: 1px solid var(--t1);
+	border-radius: 8px;
+	line-height: 35px;
+	height: 35px;
+	padding: 0 20px;
+}
+
+/* 메인,서브 상단 */
+/* 메인,서브 하단 */
+.cptNav {
+	position: relative;
+	width: 240px;
+	padding: 40px;
+	height: calc(100vh - 116px);
+	background: var(--bg4);
+	box-shadow: 5px 0 9px 0 rgba(0, 0, 0, 0.4);
+}
+.cptNav > .inner {
+	width: 100%;
+}
+.cptNav > .inner > ul {
+	display: flex;
+	flex-flow: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 36px;
+}
+.cptNav > .inner > ul > li {
+	position: relative;
+	width: 100%;
+}
+.cptNav > .inner > ul > li > a {
+	display: block;
+	width: max-content;
+	font-size: 20px;
+	color: var(--bg3);
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: -0.38px;
+}
+.cptNav > .inner > ul > li.active > a {
+	color: var(--prm2);
+}
+.cptNav > .inner > ul > li:hover > a {
+	color: var(--prm2);
+}
+.cptNav > .inner > ul > li > .depth02Cov {
+	padding: 10px;
+	transition: all 0.4s;
+	margin-top: 10px;
+}
+.cptNav > .inner > ul > li > .depth02Cov > ul {
+	display: flex;
+	flex-flow: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 18px;
+}
+.cptNav > .inner > ul > li > .depth02Cov > ul > li {
+	position: relative;
+}
+.cptNav > .inner > ul > li > .depth02Cov > ul > li > a {
+	position: relative;
+	display: block;
+	width: max-content;
+	font-size: 18px;
+	font-weight: 400;
+	color: var(--bg3);
+	line-height: 1;
+	letter-spacing: -0.23px;
+	padding-left: 11px;
+}
+.cptNav > .inner > ul > li > .depth02Cov > ul > li > a::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 3px;
+	height: 3px;
+	background: var(--bg3);
+	border-radius: 50%;
+}
+.cptNav > .inner > ul > li > .depth02Cov > ul > li:hover > a {
+	color: var(--prm2);
+}
+.cptNav > .inner > ul > li > .depth02Cov > ul > li:hover > a::after {
+	background: var(--prm2);
+}
+.cptNav > .inner > ul > li > .depth02Cov > ul > li.active > a {
+	color: var(--prm2);
+}
+.cptNav > .inner > ul > li > .depth02Cov > ul > li.active > a::after {
+	background: var(--prm2);
+}
+
+.cptSubTitle {
+	width: 100%;
+}
+.cptSubTitle .inner {
+	position: relative;
+}
+.cptSubTitle .inner > .topArea {
+	width: 100%;
+	position: relative;
+	margin-bottom: 10px;
+}
+.cptSubTitle .inner > .topArea > p.pageTitle {
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 1.4;
+	letter-spacing: -0.38px;
+	color: var(--t1);
+}
+
+.cptSubTop {
+	width: 100%;
+	margin-top: 20px;
+}
+.cptSubTop .inner {
+	position: relative;
+}
+.cptSubTop .inner > .botArea {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.cptSubTop .inner > .botArea .searchLeft select {
+	width: 150px;
+}
+
+/* 사이드 메뉴 */
+/*로그인 페이지*/
+.loginPage {
+	height: 100%;
+	background: radial-gradient(ellipse at center, rgb(255, 254, 234) 0%, rgb(255, 254, 234) 35%, #B7E9EB 100%);
+	overflow: hidden;
+}
+.loginPage .bg {
+	height: 5%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #015871;
+}
+.loginPage .bg .obj {
+	background: url(../../common/images/common/obj.svg) repeat-x;
+	position: absolute;
+	top: -198px;
+	width: 6400px;
+	height: 198px;
+	animation: obj 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+	transform: translate3d(0, 0, 0);
+}
+.loginPage .bg .obj:last-of-type {
+	top: 175px;
+	animation: obj 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+	opacity: 1;
+}
+@keyframes obj {
+	0% {
+		margin-left: 0;
+	}
+	100% {
+		margin-left: -1600px;
+	}
+}
+@keyframes swell {
+	0%, 100% {
+		transform: translate3d(0, -25px, 0);
+	}
+	50% {
+		transform: translate3d(0, 5px, 0);
+	}
+}
+.loginPage .loginBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	transform: translate(-50%, -50%);
+	padding: 60px;
+	border: 1px solid var(--lbg1);
+	box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.2);
+	background: var(--bg3);
+	border-radius: 8px;
+}
+.loginPage .loginBox > .title {
+	font-size: 30px;
+	font-weight: bold;
+	color: var(--t1);
+	text-align: center;
+	margin-bottom: 20px;
+}
+.loginPage .loginBox > .desc {
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--tbg2);
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/* 컨텐츠 일체 */
+/*# sourceMappingURL=../maps/style.css.map */

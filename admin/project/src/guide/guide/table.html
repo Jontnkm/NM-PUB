@@ -1,0 +1,114 @@
+<div class="g-area">
+
+    <strong class="g-area-tit">테이블 - 타입01</strong>
+
+    <xmp>
+        <div class="cptTable">
+            <table>
+                <colgroup>
+                    <col style="width:50px;">
+                    <col style="width:150px;">
+                    <col style="width:200px;">
+                    <col style="width:150px;">
+                    <col style="width:100px;">
+                    <col style="width:auto;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>상위메뉴명</th>
+                        <th>메뉴명</th>
+                        <th>메뉴구분</th>
+                        <th>메뉴노출순서</th>
+                        <th>메뉴 URL 경로</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>낭만에 대하여</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>/information/about</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>낭만에 대하여</td>
+                        <td>기업 문화</td>
+                        <td>썸네일 게시판</td>
+                        <td>1</td>
+                        <td>/information/culture</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>낭만에 대하여</td>
+                        <td>협력전문가</td>
+                        <td>기본게시판</td>
+                        <td>2</td>
+                        <td>/information/corper</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </xmp>
+    <style>
+    /**/
+    .classInfo * {letter-spacing:0;}
+    .classInfo .infoTitle {margin:20px 0 10px; font-size:16px; font-weight:700;}
+    .classInfo .infoMasage {margin:10px 0 10px; font-size:15px; font-weight:400;}
+    .classInfo th {padding:10px 20px; text-align:left; border:1px solid #cfcfcf; background:#dfdfdf;}
+    .classInfo td {padding:10px 20px; text-align:left; border:1px solid #cfcfcf; background:#fff;}
+    .classInfo table + table {margin-top:-1px;}
+    </style>
+
+</div>
+<!-- Guide : e -->
+
+<script type="text/javascript">
+    $(".g-area-tit, .g-area-tit01").each(function(){
+        var obj = $(this).next("xmp");
+        if(!obj.length) return;
+        var btn = '<p class="g-btn-source"><a href="#" style="font-size: 13px; color: #434343;">소스보기</a></p>';
+        var code = '<xmp class="g-code">'+obj.html()+'</xmp>';
+        $(this).append(btn);
+        $(this).after(code);
+        $(this).next().after('<div class="g-view"><div class="g-true-area">'+obj.html()+'</div></div>');
+    });
+    $(".g-btn-source a").click(function(){
+        var me = $(this).parent().parent().parent();
+        var obj = $(this).parent().parent().next();
+        if(obj.is(":hidden")){
+            obj.show();
+            me.addClass("on");
+        }else{
+            obj.hide();
+            me.removeClass("on");
+        }
+        return false;
+    });
+
+    var buttons = document.querySelectorAll(".dropDown > button");
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {            
+            var parent = this.parentElement;
+            var drpdwBox = parent.querySelector(".dropDownBox");
+            if (parent.classList.contains("disabled")){
+                alert("비활성화된 항목입니다.");
+            } else {
+                if (this.classList.contains("active")) {
+                    parent.classList.remove("active");
+                    this.setAttribute("title","열기");
+                    this.classList.remove("active");
+                    drpdwBox.style.display = "none";
+                } else {
+                    parent.classList.add("active");
+                    this.classList.add("active");
+                    this.setAttribute("title","접기");
+                    drpdwBox.style.display = "block";
+                }
+            }
+        });
+    });
+
+</script>

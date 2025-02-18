@@ -1,346 +1,64 @@
 <!-- Guide : s -->
 <div class="g-area">
 
-    <strong class="g-area-tit">CALENDAR</strong>
+    <strong class="g-area-tit">basic form</strong>
     
     <xmp>
-        <p class="guideTitle lt">CALENDAR - CUSTOMIZED</p>
-        <div class="cptForm" style="display:flex; gap:20px;">
-            <div class="frmGroup datepicker alingMid">
-                <div class="iptDate tui-datepicker-input tui-datetime-input tui-has-focus">
-                    <input type="text" id="datepicker-input1" aria-label="Date-Time" class="calendar">
-                    <div id="wrapper1"></div>
-                </div>
-                <div class="Deco">-</div>
-                <div class="iptDate tui-datepicker-input tui-datetime-input tui-has-focus">
-                    <input type="text" id="datepicker-input2" aria-label="Date-Time" class="calendar">
-                    <div id="wrapper2"></div>
-                </div>
-            </div>
-            <!-- <div class="frmGroup">
-                <div class="iptDate tui-datepicker-input tui-datetime-input tui-has-focus">
-                    <input type="text" id="tui-date-picker-target" aria-label="Date-Time" class="calendar" title="날짜선택">
-                </div>
-                <div class="deco">-</div>
-                <div class="iptDate tui-datepicker-input tui-datetime-input tui-has-focus">
-                    <input type="text" id="tui-date-picker-target" aria-label="Date-Time" class="calendar" title="날짜선택">
-                </div>
-            </div>
-            <br><br>
-            <div class="frmGroup">
-                <div class="iptDate tui-datepicker-input tui-datetime-input tui-has-focus">
-                    <input type="text" id="tui-date-picker-target" aria-label="Date-Time" class="calendar" title="날짜선택" disabled value="2024-12-20">
-                </div>
-                <div class="deco">-</div>
-                <div class="iptDate tui-datepicker-input tui-datetime-input tui-has-focus">
-                    <input type="text" id="tui-date-picker-target" aria-label="Date-Time" class="calendar" title="날짜선택" disabled value="2024-12-20" >
-                </div>
-            </div> -->
-        </div>
-    </xmp>
-    
-    <strong class="g-area-tit">검색창</strong>
-    <xmp>
-        <div class="cptFormSearch">
-            <div class="inner">
-                <div class="leftArea">
-                    <p class="stat">
-                        총
-                        <span>170</span>
-                        건의 게시물이 등록되었습니다.
-                    </p>
-                </div>
-                <div class="rightArea">
-                    <div class="formCover">
-                        <div class="dropDown">
-                            <button type="button" class="" title="열기">내용</button>
-                            <div class="dropDownBox">
-                                <ul class="ddCont">
-                                    <li><a href="#none">제목테스트</a></li>
-                                    <li><a href="#none" class="selected">내용</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="iptArea">
-                            <input type="text" title="검색어 입력 창" placeholder="검색어를 입력해주세요."/>
-                            <a href="#none" class="search">
-                                <span class="hidden">검색하기</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </xmp>
-
-    <strong class="g-area-tit">INPUT</strong>
-    <xmp>
-        <p class="guideTitle lt">Default</p>
+        <p class="guideTitle lt">로그인 input</p>
         <div class="cptForm">
-            <div class="ipt">
-                <input type="text" title="000를위한 입력창" placeholder="텍스트" />
+            <div class="loginType">
+                <div class="idBox">
+                    <label for="loginId">ID</label>
+                    <input type="text" id="loginId">
+                </div>
+                <div class="pwBox">
+                    <label for="loginPw">PASSWORD</label>
+                    <input type="password" id="loginPw">
+                </div>
             </div>
-            
-            <br><br>
-
-            <div class="ipt">
-                <input type="text" title="000를위한 입력창" placeholder="텍스트"/>
-                <span class="ico">영문,숫자,특수기호를 조합하여 8~12자로 설정해주세요.</span>
+            <div class="loginChk">
+                <input type="checkbox" id="loginChk">
+                <label for="loginChk">내 계정 저장하기</label>
             </div>
-            
-            <br><br>
-
-            <div class="ipt">
-                <input type="text" title="000를위한 입력창" placeholder="텍스트" class="error"/>
-                <span class="ico">영문,숫자,특수기호를 조합하여 8~12자로 설정해주세요.</span>
-            </div>
-            
-            <br><br>
-
-            <div class="ipt">
-                <input type="text" title="000를위한 입력창" placeholder="텍스트" class="success"/>
-                <span class="ico">비밀번호가 일치합니다.</span>
-            </div>
-            
-            <br><br>
-
-            <div class="ipt">
-                <input type="text" title="000를위한 입력창" placeholder="텍스트" disabled/>
+            <div class="loginBtn">
+                <button type="button">로그인</button>
+                <!--2025.02.17 disabled 케이스 -->
+                <!-- <button type="button" disabled>로그인</button> -->
             </div>
         </div>
 
-        <p class="guideTitle lt">Text + Input (COLUMN ARRANGE)</p>
+        <p class="guideTitle lt">상단 검색영역</p>
         <div class="cptForm">
-            <p class="lbTxt">이름</p>
-            <div class="ipt">
-                <input type="text" title="이름입력" placeholder="이름을 입력해주세요." />
+            <div class="slt">
+                <select name="" id="">
+                    <option value="">메뉴명</option>
+                    <option value="">상위 메뉴명</option>
+                </select>
             </div>
-
-            <br><br>
-
-            <p class="lbTxt">주민등록번호</p>
-            <div class="frmGroup">
-                <div class="ipt">
-                    <input type="text" title="주민등록번호 앞자리 입력" placeholder="000000" />
-                </div>
-                <div class="deco">-</div>
-                <div class="ipt">
-                    <input type="text" title="주민등록번호 뒷자리 입력" placeholder="1******" />
-                </div>
-            </div>
-
-            <br><br>
-            
-            <p class="lbTxt">아이디</p>
-            <div class="frmGroup">
-                <div class="ipt">
-                    <input type="text" title="주민등록번호 앞자리 입력" placeholder="000000" />
+            <div class="frmGroup alignL">
+                <div class="ipt srch">
+                    <input type="text">
                 </div>
                 <div class="comButton">
-                    <button type="button" class="btn h50 l-b">중복확인</button>
+                    <button type="button" class="btn srch">검색</button>
                 </div>
+            </div>
+            <div class="comButton">
+                <button type="button" class="btn ins">등록</button>
             </div>
         </div>
 
-        <p class="guideTitle lt">Text + Input (ROW ARRANGE)</p>
-        <div class="cptForm">
-            <div class="rowType">
-                <p class="lbTxt">아이디</p>
-                <div class="frmGroup">
-                    <div class="ipt">
-                        <input type="text" title="아이디입력" placeholder="아이디를 입력해주세요." />
-                    </div>
-                    <div class="comButton">
-                        <button type="button" class="btn h50 l-b">중복확인</button>
-                    </div>
-                </div>
-            </div>
+        <p class="guideTitle lt">기본 input</p>
 
-            <br><br>
-            
-            <div class="rowType">
-                <p class="lbTxt">주민등록번호</p>
-                <div class="frmGroup">
-                    <div class="ipt">
-                        <input type="text" title="주민등록번호 앞자리 입력" placeholder="000000" />
-                    </div>
-                    <div class="deco">-</div>
-                    <div class="ipt">
-                        <input type="text" title="주민등록번호 뒷자리 입력" placeholder="1******" />
-                    </div>
-                </div>
-            </div>
+        <p class="guideTitle lt">select box</p>
 
-            <br><br>
-            
-            <div class="rowType">
-                <p class="lbTxt">아이디</p>
-                <div class="frmGroup">
-                    <div class="ipt">
-                        <input type="text" title="주민등록번호 앞자리 입력" placeholder="000000" />
-                    </div>
-                    <div class="comButton">
-                        <button type="button" class="btn h50 l-b">중복확인</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </xmp>
+        <p class="guideTitle lt">파일첨부</p>
 
-    <strong class="g-area-tit">SELECT</strong>
-    <xmp>
-        <p class="guideTitle lt">BASIC TYPE</p>
-        <div class="cptForm">
-            <div class="dropDown error">
-                <button type="button" class="" title="열기">내용</button>
-                <div class="dropDownBox">
-                    <ul class="ddCont">
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none" class="selected">내용</a></li>
-                    </ul>
-                </div>
-            </div>
-            <span class="ico">영문,숫자,특수기호를 조합하여 8~12자로 설정해주세요.</span>
+        <p class="guideTitle lt">텍스트에리어</p>
 
-            <br>
-
-            <div class="dropDown disabled">
-                <button type="button" class="" title="비활성화">내용</button>
-                <div class="dropDownBox">
-                    <ul class="ddCont">
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none" class="selected">내용</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="dropDown hlf">
-                <button type="button" class="" title="열기">국민은행</button>
-                <div class=" dropDownBox hlfddCont">
-                    <ul>
-                        <li><a href="#none" class="selected">내용</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="dropDown hlf">
-                <button type="button" class="" title="열기">종목</button>
-                <div class="dropDownBox hlfddCont ty01">
-                    <ul>
-                        <li><a href="#none" class="selected">내용</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                        <li><a href="#none">제목테스트</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </xmp>
-
-    <strong class="g-area-tit">CHECKBOX & RADIO </strong>
-    <xmp>
-        <p class="guideTitle lt">CHECKBOX</p>
-        <div class="cptForm" style="display:flex; gap:20px;">
-            <div class="frmChk">
-                <input type="checkbox" id="chk01" checked />
-                <label for="chk01">텍스트</label>
-            </div>
-            <div class="frmChk">
-                <input type="checkbox" id="chk02" />
-                <label for="chk02">텍스트</label>
-            </div>
-            <div class="frmChk">
-                <input type="checkbox" id="chk03" disabled />
-                <label for="chk03">텍스트</label>
-            </div>
-        </div>
-
-        <br><br>
-
-        <p class="guideTitle lt">RADIO</p>
-        <div class="cptForm" style="display:flex; gap:20px;">
-            <div class="frmRdo">
-                <input type="radio" id="rdo01" name="rdo01" checked />
-                <label for="rdo01">6개월</label>
-            </div>
-            <div class="frmRdo">
-                <input type="radio" id="rdo02" name="rdo01" />
-                <label for="rdo02">1년</label>
-            </div>
-            <div class="frmRdo">
-                <input type="radio" id="rdo03" name="rdo01" disabled />
-                <label for="rdo03">3개월</label>
-            </div>
-        </div>
-
-        <br><br>
-
-        <p class="guideTitle lt">RADIO - CIRCLE</p>
-        <div class="cptForm" style="display:flex; gap:20px;">
-            <div class="frmRdo ty02">
-                <input type="radio" id="rdo011" name="rdo02" checked />
-                <label for="rdo011">6개월</label>
-            </div>
-            <div class="frmRdo ty02">
-                <input type="radio" id="rdo021" name="rdo02" />
-                <label for="rdo021">1년</label>
-            </div>
-            <div class="frmRdo ty02">
-                <input type="radio" id="rdo031" name="rdo02" disabled />
-                <label for="rdo031">3개월</label>
-            </div>
-        </div>
+        <p class="guideTitle lt">input (표 내부 사용 경우)</p>
+        
+        <p class="guideTitle lt">selecot (표 내부 사용 경우)</p>
     </xmp>
 
 <style>

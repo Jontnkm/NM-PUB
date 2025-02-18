@@ -1,0 +1,151 @@
+<!-- Header -->
+<%- include('../ejs/top.ejs', {
+    title: "세무법인 낭만 CMS 관리시스템",
+    url: "../../"
+}) %>
+
+<!-- 레이아웃 START -->
+<div class="lytLayout">
+    <div class="layoutArea">
+        <!-- 상단영역 -->
+        <div class="layoutTop">
+            <!-- Top -->
+            <%- include('../ejs/header.ejs', {
+                url: "../../",
+            }) %>
+        </div>
+        <!-- //상단영역 -->
+        <!--중단 영역-->
+        <div class="layoutContainer">
+            <div class="layoutSubCont">
+                <div class="subContArea">
+                    
+                    <!-- 좌측 메뉴 영역 -->
+                    <div class="layoutNav">
+                        <!-- Left Menu -->
+                        <%- include('../ejs/nav.ejs', {
+                            depth1:1,
+                            depth2:2,
+                            url: "../../",
+                        }) %>
+                    </div>
+
+                    <!--컨텐츠영역-->
+                    <div class="layoutCont">
+
+                        <%- include('../ejs/subTitle.ejs', {
+                            url: "../../",
+                        }) %>
+                        
+                        <!--컨텐츠 START-->
+                        <div class="contCov">
+                            <div class="cptTable">
+                                <p class="tbTitle">메뉴정보</p>
+                                <table class="tbView insUpd"><!-- 2025.02.18 수정&등록페이지 경우 insUpd 클래스 추가 -->
+                                    <colgroup>
+                                        <col style="width:200px;">
+                                        <col style="width:auto;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>제목 <span class="required">*</span></th>
+                                            <td>
+                                                <div class="cptForm">
+                                                    <div class="ipt">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>노출순서 <span class="required">*</span></th>
+                                            <td>
+                                                <div class="cptForm">
+                                                    <div class="ipt">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>사용여부 <span class="required">*</span></th>
+                                            <td>
+                                                <div class="cptForm">
+                                                    <div class="slt">
+                                                        <select name="" id="">
+                                                            <option value="">선택</option>
+                                                            <option value="">2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="cptTable">
+                                <p class="tbTitle">파일 첨부</p>
+                                <table class="tbView">
+                                    <colgroup>
+                                        <col style="width:200px;">
+                                        <col style="width:auto;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>이미지 첨부파일 <span class="required">*</span></th>
+                                            <td>
+                                                <div class="cptForm">
+                                                    <div class="file">
+                                                        <div class="before">
+                                                            <input type="file" id="attFile" class="fileIpt">
+                                                            <label for="attFile">파일선택</label>
+                                                        </div>
+                                                        <div class="after">
+                                                            <a href="javascript:void(0)" class="fileNm">filename.png</a>
+                                                            <button type="button" class="delBtn"><span class="hidden">삭제</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="comButton">
+                                <div class="btnGroup alignR">
+                                    <!-- 등록일때 -->
+                                    <button type="button" class="btn ins">등록</button>
+                                    <!-- 수정일때 -->
+                                    <button type="button" class="btn upd">수정</button>
+                                    <button type="button" class="btn del">삭제</button>
+                                    <button type="button" class="btn cncl">취소</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--컨텐츠 END-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //중단 영역-->
+
+        <!-- 하단영역 -->
+        <div class="layoutFooter">
+            <!-- Footer -->
+            <%- include('../ejs/footer.ejs', {
+                url: "../../"
+            }) %>
+        </div>
+        <!-- //하단영역 -->
+    </div>
+</div>
+<!-- //레이아웃 END -->
+
+<!-- 팝업이 들어오는 영역 -->
+<!-- //팝업이 들어오는 영역 -->
+
+<!-- Bottom -->
+<%- include('../ejs/bottom.ejs', { }) %>

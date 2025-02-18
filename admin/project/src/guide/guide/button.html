@@ -1,0 +1,141 @@
+<!-- Guide : s -->
+<div class="g-area">
+    <strong class="g-area-tit">버튼</strong>
+    <xmp>
+        <p class="guideTitle lt">버튼</p>
+
+        <div class="comButton">
+
+            <button type="button" class="btn sel">목록</button>
+
+            <button type="button" class="btn ins">등록</button>
+
+            <button type="button" class="btn upd">수정</button>
+
+            <button type="button" class="btn del">삭제</button>
+
+            <button type="button" class="btn cncl">취소</button>
+
+            <button type="button" class="btn comp">완료</button>
+            
+        </div>
+
+        <p class="guideTitle lt">mini type</p>
+
+        <div class="comButton">
+
+            <button type="button" class="btn mini sel">목록</button>
+
+            <button type="button" class="btn mini ins">등록</button>
+
+            <button type="button" class="btn mini upd">수정</button>
+
+            <button type="button" class="btn mini del">삭제</button>
+
+            <button type="button" class="btn mini cncl">취소</button>
+
+            <button type="button" class="btn mini comp">완료</button>
+            
+        </div>
+
+        <p class="guideTitle lt">disabled type</p>
+
+        <div class="comButton">
+
+            <button type="button" class="btn sel" disabled>목록</button>
+
+            <button type="button" class="btn ins" disabled>등록</button>
+
+            <button type="button" class="btn upd" disabled>수정</button>
+
+            <button type="button" class="btn del" disabled>삭제</button>
+
+            <button type="button" class="btn cncl" disabled>취소</button>
+
+            <button type="button" class="btn comp" disabled>완료</button>
+            
+        </div>
+
+        <p class="guideTitle lt">좌, 우, 가운데 정렬</p>
+
+        <div class="comButton">
+
+            <div class="btnGroup alignL">
+                <button type="button" class="btn ins">등록</button>
+                <button type="button" class="btn upd">수정</button>
+            </div>
+
+            <div class="btnGroup alignR">
+                <button type="button" class="btn ins">등록</button>
+                <button type="button" class="btn upd">수정</button>
+            </div>
+
+            <div class="btnGroup alignC">
+                <button type="button" class="btn ins">등록</button>
+                <button type="button" class="btn upd">수정</button>
+            </div>
+            
+        </div>
+
+        <p class="guideTitle lt">한줄에 좌우 정렬</p>
+
+        <div class="comButton">
+
+            <div class="btnGroup alignSpread">
+                <div>
+                    <button type="button" class="btn ins">등록</button>
+                    <button type="button" class="btn upd">수정</button>
+                </div>
+                <div>
+                    <button type="button" class="btn ins">등록</button>
+                    <button type="button" class="btn upd">수정</button>
+                </div>
+            </div>
+
+        </div>
+    </xmp>
+</div>
+    <!-- Guide : e -->
+    
+    <script type="text/javascript">
+    $(".g-area-tit, .g-area-tit01").each(function(){
+        var obj = $(this).next("xmp");
+        if(!obj.length) return;
+        var btn = '<p class="g-btn-source"><a href="#" style="font-size: 13px; color: #434343;">소스보기</a></p>';
+        var code = '<xmp class="g-code">'+obj.html()+'</xmp>';
+        $(this).append(btn);
+        $(this).after(code);
+        $(this).next().after('<div class="g-view"><div class="g-true-area">'+obj.html()+'</div></div>');
+    });
+    $(".g-btn-source a").click(function(){
+        var me = $(this).parent().parent().parent();
+        var obj = $(this).parent().parent().next();
+        if(obj.is(":hidden")){
+            obj.show();
+            me.addClass("on");
+        }else{
+            obj.hide();
+            me.removeClass("on");
+        }
+        return false;
+    });
+
+    var buttons = document.querySelectorAll(".frmCombo button");
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {            
+            var parent = this.parentElement;
+            var drpdwBox = parent.querySelector(".drpdwBox");
+            if (this.classList.contains("on")) {
+                parent.classList.remove("on");
+                this.classList.remove("on");
+                drpdwBox.style.display = "none";
+            } else {
+                parent.classList.add("on");
+                this.classList.add("on");
+                drpdwBox.style.display = "block";
+            }
+        });
+    });
+
+
+    </script>
