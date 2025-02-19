@@ -1,5 +1,5 @@
 .cptHeader {
-    position:relative; width:100%; padding: 40px; border-bottom:1px solid var(--lbg2);
+    position:relative; width:100%; padding: 20px 40px; border-bottom:1px solid var(--lbg2); background-color: var(--bg3);
 
     .inner {
         display:flex; flex-flow: row nowrap; align-items: center; justify-content: space-between;
@@ -7,7 +7,11 @@
         > .logoArea {
             
             > a {
-                display:block; border:1px solid red; font-size:20px; font-weight:Bold; color:var(--t1);
+                display:inline-block; 
+
+                > img {
+                    width:150px;
+                }
             }
         }
 

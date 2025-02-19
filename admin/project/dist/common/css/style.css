@@ -732,7 +732,7 @@ label {
 	height: 100%;
 }
 .wrap .layoutContainer {
-	height: calc(100% - 116px);
+	height: calc(100% - 89px);
 }
 .wrap .layoutSubCont {
 	height: 100%;
@@ -922,8 +922,9 @@ label {
 .cptHeader {
 	position: relative;
 	width: 100%;
-	padding: 40px;
+	padding: 20px 40px;
 	border-bottom: 1px solid var(--lbg2);
+	background-color: var(--bg3);
 }
 .cptHeader .inner {
 	display: flex;
@@ -932,11 +933,10 @@ label {
 	justify-content: space-between;
 }
 .cptHeader .inner > .logoArea > a {
-	display: block;
-	border: 1px solid red;
-	font-size: 20px;
-	font-weight: Bold;
-	color: var(--t1);
+	display: inline-block;
+}
+.cptHeader .inner > .logoArea > a > img {
+	width: 150px;
 }
 .cptHeader .inner > .accOptArea > ul {
 	display: flex;
@@ -979,7 +979,7 @@ label {
 	position: relative;
 	width: 240px;
 	padding: 40px;
-	height: calc(100vh - 116px);
+	height: calc(100vh - 89px);
 	background: var(--bg4);
 	box-shadow: 5px 0 9px 0 rgba(0, 0, 0, 0.4);
 }
@@ -1163,6 +1163,14 @@ label {
 	box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.2);
 	background: var(--bg3);
 	border-radius: 8px;
+}
+.loginPage .loginBox > .logo {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.loginPage .loginBox > .logo img {
+	width: 30%;
+	display: inline;
 }
 .loginPage .loginBox > .title {
 	font-size: 30px;
