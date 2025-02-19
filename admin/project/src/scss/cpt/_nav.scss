@@ -11,18 +11,18 @@
                 position:relative; width:100%;
 
                 > a {
-                    display:block; width:max-content; font-size:20px; color:var(--bg3); font-weight:400; line-height:1; letter-spacing:-0.38px;
+                    display:block; width:max-content; font-size:20px; color:var(--bg3); font-weight:400; line-height:1; letter-spacing:-0.38px; opacity:0.8;
                 }
 
                 &.active {
                     > a {
-                        color:var(--prm2);
+                        color:var(--prm2); opacity:1;
                     }
                 }
 
                 &:hover {
                     > a {
-                        color:var(--prm2);
+                        color:var(--prm2);  opacity:1;
                     }
                 }
 
@@ -36,7 +36,7 @@
                             position:relative;
 
                             > a {
-                                position:relative; display:block; width:max-content; font-size:18px; font-weight:400; color:var(--bg3); line-height:1; letter-spacing:-0.23px; padding-left:11px;
+                                position:relative; display:block; width:max-content; font-size:18px; font-weight:400; color:var(--bg3); line-height:1; letter-spacing:-0.23px; padding-left:11px; opacity:0.8;
 
                                 &::after {
                                     content:''; position:absolute; top:50%; left:0; width:3px; height:3px; background:var(--bg3); border-radius:50%;
@@ -45,18 +45,18 @@
 
                             &:hover {
                                 > a {
-                                    color:var(--prm2);
+                                    color:var(--prm2); opacity:1;
                                     &::after {
-                                        background:var(--prm2);
+                                        background:var(--prm2); opacity:1;
                                     }
                                 }
                             }
 
                             &.active {
                                 > a {
-                                    color:var(--prm2);
+                                    color:var(--prm2); opacity:1;
                                     &::after {
-                                        background:var(--prm2);
+                                        background:var(--prm2); opacity:1;
                                     }
                                 }
                             }

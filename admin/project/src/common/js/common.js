@@ -27,4 +27,21 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+    
 });
+
+function popOpen(popId){
+    let thispop = document.querySelector("#" + popId);
+    let body = document.body;
+
+    body.style.overflow = "hidden";
+    thispop.classList.add("popOpen");
+}
+
+function popClose(popId){
+    let thispop = document.querySelector("#" + popId);
+    let body = document.body;
+
+    body.style.overflow = "";
+    thispop.classList.remove("popOpen");
+}

@@ -384,6 +384,26 @@ label {
 .cptForm .ipt.srch input {
 	border-radius: 8px 0 0 8px;
 }
+.cptForm .ta {
+	position: relative;
+}
+.cptForm .ta textarea {
+	appearance: none;
+	resize: none;
+	width: 100%;
+	max-height: 150px;
+	overflow-y: auto;
+	height: 150px;
+	border: 1px solid var(--lbg1);
+	border-radius: 8px;
+	padding: 20px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+.cptForm .ta textarea:focus {
+	border: 2px solid var(--prm2);
+}
 .cptForm .file {
 	position: relative;
 }
@@ -581,7 +601,7 @@ label {
 	font-size: 16px;
 	color: var(--bg3);
 	font-weight: 600;
-	padding: 20px 10px;
+	padding: 14px 10px;
 	text-align: center;
 	line-height: 22px;
 	background: var(--prm3);
@@ -592,7 +612,7 @@ label {
 	font-size: 16px;
 	color: var(--t1);
 	font-weight: 400;
-	padding: 20px;
+	padding: 14px 10px;
 	text-align: center;
 	line-height: 22px;
 	background: var(--bg3);
@@ -602,12 +622,41 @@ label {
 }
 .cptTable > .tbData > tbody > tr > td > a {
 	text-decoration: underline;
+	transition: all 0.2s;
+}
+.cptTable > .tbData > tbody > tr > td > a:hover {
+	color: var(--prm2);
+}
+.cptTable > .tbData > tbody > tr > td > a.thumb {
+	position: relative;
+	display: block;
+	height: 200px;
+	overflow: hidden;
+}
+.cptTable > .tbData > tbody > tr > td > a.thumb > img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	transition: all 0.4s;
+}
+.cptTable > .tbData > tbody > tr > td > a.thumb:hover img {
+	width: 55%;
+}
+.cptTable > .tbData > tbody > tr > td img {
+	display: inline;
 }
 .cptTable > .tbData > tbody > tr > td.txtBlue {
 	color: var(--prm2);
 }
 .cptTable > .tbData > tbody > tr > td.txtRed {
 	color: var(--snd3);
+}
+.cptTable > .tbData > tbody > tr > td .comButton button {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 20px;
 }
 .cptTable > .tbView {
 	border-collapse: collapse;
@@ -642,6 +691,9 @@ label {
 	border-bottom: 1px solid var(--lbg1);
 	order: 1;
 }
+.cptTable > .tbView > tbody > tr > td img {
+	display: inline;
+}
 .cptTable > .tbView > tbody > tr > td .cptForm .slt {
 	width: 250px;
 }
@@ -656,6 +708,14 @@ label {
 }
 .cptTable > .tbView > tbody > tr > td.txtRed {
 	color: var(--snd3);
+}
+.cptTable > .tbView > tbody > tr > td .comButton button {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 20px;
+}
+.cptTable > .tbView > tbody > tr > td .editorBox {
+	position: relative;
 }
 .cptTable > .tbView.insUpd td {
 	padding: 10px;
@@ -695,8 +755,168 @@ label {
 	width: calc(100% - 240px);
 	height: 100%;
 	max-height: 100%;
-	padding: 40px;
+	padding: 40px 40px 120px 40px;
 	overflow-y: auto;
+}
+
+/* 레이어팝업 */
+.modPopup {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+	display: none;
+}
+.modPopup .popupDim {
+	width: 100%;
+	height: 100vh;
+	font-size: 0;
+	background: rgba(0, 0, 0, 0.75);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+}
+.modPopup .popupBox {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	display: flex;
+	flex-flow: column;
+	z-index: 1;
+}
+.modPopup .popupBox > * {
+	opacity: 0;
+}
+.modPopup .popupBox::before {
+	display: block;
+	content: "";
+	width: 0;
+	height: 0;
+	background: var(--bg3);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: -1;
+}
+.modPopup.popOpen {
+	display: flex;
+}
+.modPopup.popOpen .popupDim {
+	opacity: 1;
+}
+.modPopup.popOpen .popupBox::before {
+	animation: popOut 0.15s linear 1 forwards;
+}
+.modPopup.popOpen .popupBox > * {
+	animation: opaci1 0.15s linear 0.15s 1 forwards;
+}
+@keyframes popOut {
+	from {
+		width: 0;
+		height: 0;
+		top: 50%;
+		left: 50%;
+	}
+	to {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+@keyframes opaci1 {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.modPopup.type01 .popupBox {
+	max-height: 85%;
+	border-radius: 20px;
+	padding: 30px 40px;
+	margin-top: -50px;
+}
+@supports (-webkit-touch-callout: none) {
+	.modPopup.type01 .popupBox {
+		max-height: 80%;
+		margin-top: -100px;
+	}
+}
+.modPopup.type01 .popupBox::before {
+	border-radius: 20px;
+}
+.modPopup.type01 .popupBox .popTitleArea {
+	width: 100%;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid var(--lbg1);
+	padding-bottom: 20px;
+}
+.modPopup.type01 .popupBox .popTitleArea .tit {
+	font-size: 20px;
+	color: var(--t1);
+	font-weight: 700;
+}
+.modPopup.type01 .popupBox .popTitleArea .tit b {
+	color: #005ce6;
+}
+.modPopup.type01 .popupBox .popTitleArea .closeBtn {
+	margin-left: auto;
+	width: 24px;
+	height: 24px;
+	font-size: 0;
+	background: url(../../common/images/common/ico_pop_close.svg) center no-repeat;
+}
+.modPopup.type01 .popupBox .popTitleArea.type02 {
+	border-bottom: 0;
+}
+.modPopup.type01 .popupBox .popContArea {
+	overflow-y: scroll;
+}
+.modPopup.type01 .popupBox .popContArea::-webkit-scrollbar {
+	display: none;
+}
+.modPopup.type01 .popupBox .popContArea .cptForm > div {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+.modPopup.type01 .popupBox .popContArea .cptForm > div > label {
+	font-size: 16px;
+	color: var(--t1);
+	font-weight: 500;
+	width: 120px;
+}
+.modPopup.type01 .popupBox .popContArea .cptForm > div > input, .modPopup.type01 .popupBox .popContArea .cptForm > div select {
+	width: calc(100% - 140px);
+}
+.modPopup.type01 .popupBox .popContArea .cptForm > div.ta {
+	flex-flow: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+.modPopup.type01 .popupBox.sm {
+	max-width: 440px;
+}
+.modPopup.type01 .popupBox.lg {
+	max-width: 710px;
 }
 
 .cptHeader {
@@ -785,12 +1005,15 @@ label {
 	font-weight: 400;
 	line-height: 1;
 	letter-spacing: -0.38px;
+	opacity: 0.8;
 }
 .cptNav > .inner > ul > li.active > a {
 	color: var(--prm2);
+	opacity: 1;
 }
 .cptNav > .inner > ul > li:hover > a {
 	color: var(--prm2);
+	opacity: 1;
 }
 .cptNav > .inner > ul > li > .depth02Cov {
 	padding: 10px;
@@ -817,6 +1040,7 @@ label {
 	line-height: 1;
 	letter-spacing: -0.23px;
 	padding-left: 11px;
+	opacity: 0.8;
 }
 .cptNav > .inner > ul > li > .depth02Cov > ul > li > a::after {
 	content: "";
@@ -830,15 +1054,19 @@ label {
 }
 .cptNav > .inner > ul > li > .depth02Cov > ul > li:hover > a {
 	color: var(--prm2);
+	opacity: 1;
 }
 .cptNav > .inner > ul > li > .depth02Cov > ul > li:hover > a::after {
 	background: var(--prm2);
+	opacity: 1;
 }
 .cptNav > .inner > ul > li > .depth02Cov > ul > li.active > a {
 	color: var(--prm2);
+	opacity: 1;
 }
 .cptNav > .inner > ul > li > .depth02Cov > ul > li.active > a::after {
 	background: var(--prm2);
+	opacity: 1;
 }
 
 .cptSubTitle {
